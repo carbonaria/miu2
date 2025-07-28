@@ -1,22 +1,29 @@
 #include <iostream>
-#include <vector>
 #include <cctype>
+#include <string>
 using namespace std;
 // взять, перевести нижний регистр в верхний и наоброт
-
-int main() {
-     
-    char q[100], w[100];
-    cin>>q;
-    for( int i=0; i<size(q); i++) {
-        if (isupper(q[i])) w[i]+=tolower(q[i]) ;
-        else if(islower(q[i])) w[i]+=toupper(q[i]);
+auto reg_trans(string q) {
+    string w;
+    for( int i=0; i<q.size(); i++) {
+        if (isupper(q[i])) w += tolower(q[i]);
+        else if (islower(q[i])) w += toupper(q[i]);
         else{
             cout<<"err"<<endl;
             break;
         }
-    
     }
+    return w;
+}
+
+
+int main() {
+     
+    char q[100];
+    string w;
+    cout<<"dlsc:"<<endl;
+    cin>>q;
+    w=reg_trans(q);
     cout<<w;
     
 }
