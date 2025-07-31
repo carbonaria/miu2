@@ -12,10 +12,10 @@ void write_help() {
 void write_version() {
     cout << "(*3*)";
 }
+
 // перевести нижний регистр в верхний и наоброт
 auto reg_trans(const string q) {
-    string w;
-//             *
+    string w; // *
     for( char s : q) {
         if (isupper(s)) w += tolower(s);
         else if (islower(s)) w += toupper(s);
@@ -32,7 +32,7 @@ struct Config {
 
 };
 
-//const?               *
+//                            *
 Config parse_arguments(int argc, const char* argv[]) {
     Config cfg; //{ string, bool }
     for (int i = 1; i < argc; i++) {
@@ -49,12 +49,7 @@ Config parse_arguments(int argc, const char* argv[]) {
     return cfg;
 }
 
-
-
-
 int main(int argc, const char* argv[]) {
-    
     Config pars_res = parse_arguments(argc, argv);
     cout << pars_res.text;
-    
 }
