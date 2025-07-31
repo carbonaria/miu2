@@ -10,11 +10,12 @@ void write_help() {
 }
 
 void write_version() {
-    cout << "Course work for option 4.3, created by Molchanova Margarita.\n";
+    cout << "(*3*)";
 }
 // перевести нижний регистр в верхний и наоброт
 auto reg_trans(const string q) {
     string w;
+//             *
     for( char s : q) {
         if (isupper(s)) w += tolower(s);
         else if (islower(s)) w += toupper(s);
@@ -40,7 +41,7 @@ Config parse_arguments(int argc, const char* argv[]) {
             if (arg == "--help") write_help();
             else if (arg == "--version") write_version();
             else cout << "wrong argument: " << arg << endl;
-            cfg.isInterupted = true;
+            cfg.isInterupted = true; // *
         } else {
             cfg.text += reg_trans(arg);
         }
